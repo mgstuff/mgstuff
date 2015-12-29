@@ -8,7 +8,7 @@ void Pierwsze()
 	int liczba;
 	cin >> n;
 	if(n<100000)
-	{
+    {
 	for(int p=1; p<n; p++){
 		if(liczba>=1 && liczba<=10000)
 		{
@@ -22,12 +22,8 @@ void Pierwsze()
 			}
 			cout << endl;
 		}
-		}
-	}
-	else
-	{
-		cout <<"Wrong n";
-	}
+    }
+    }
 }
 int main(){
 	Pierwsze();
