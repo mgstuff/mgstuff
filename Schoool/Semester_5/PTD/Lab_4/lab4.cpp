@@ -10,8 +10,13 @@ vector<float> sinus;
 vector<float> spectrum;
 vector<float> ximagine;
 vector<float> xreal;
+
 vector<float> amodulacja;
 vector<float> pmodulacja;
+
+vector<float> askmodulacja;
+vector<float> pskmodulacja;
+vector<float> fskmodulacja;
 
 class Sinus {
 
@@ -115,7 +120,36 @@ void AmPm::Generate_PM()
 	}
 }
 
-class APSK 
+class APSK
+{
+public:
+    
+    
+public:
+    void Generate_ASK();
+    
+    
+};
+
+void Generate_ASK()
+{
+    
+    for (int j = 0; j < 100; j++) {
+        bit = (i * 100) + j;
+        if (m[j] == 1)
+        {
+            askmodulacja.push_back(A * sin(2 * pi * frequency * t / sampling_frequency + phase))
+            ask[bit] = A * sin((2 * pi * (f / 2) * bit) / 100);
+        }
+        else if(m[j] == 0)
+        {
+            ask[bit] = 0.5 * A * sin((2 * pi * (f / 2) * bit) / 100);
+        }
+        ++i;
+    }
+}
+
+}
 
 
 
