@@ -2,7 +2,7 @@
 //  main.cpp
 //  Lab_5
 //
-//  Created by Michał Grycki on 09.01.2016.
+//  Created by Michał Grycki on 23.01.2016.
 //  Copyright © 2016 Michał Grycki. All rights reserved.
 //
 
@@ -129,7 +129,10 @@ class APSK : Sinus
 {
     friend class Sinus;
 public:
-    vector<int> binary_signal = {0,1,1,1,0,1,0,1,1,0};
+    vector<int> binary_signal = {0,1,1,1,0,1,0,1};
+    vector<int> ask_demodulation_signal;
+    vector<int> fsk_demodulation_signal;
+    vector<int> psk_demodulation_signal;
     vector<float> askmodulacja;
     vector<float> fskmodulacja;
     vector<float> pskmodulacja;
@@ -141,17 +144,26 @@ public:
     float faza = 2.14;
     float f1 = N+1/tb;
     float f2 = N+2/tb;
+    
+    float askdemodulationone = 0;
+    float askdemodulationzero = 0;
+    
+    float fskdemodulationone = 0;
+    float fskdemodulationzero = 0;
+    
+    float pskdemodulationone = 0;
+    float pskdemodulationzero = 0;
 
 public:
-    void Generate_ASK();
-    void Generate_FSK();
-    void Generate_PSK();
+    void Generate_ASK_and_Demodulate();
+    void Generate_FSK_and_Demodulate();
+    void Generate_PSK_and_Demodulate();
 };
 
 
-void APSK::Generate_ASK()
+void APSK::Generate_ASK_and_Demodulate()
 {
-    for (int t = 0; t<= sizeof(binary_signal); t++) {
+    for (int t = 0; t<= 8; t++) {
         if (binary_signal.at(t) == 1)
         {
             askmodulacja.push_back(A*sin(2*pi*f1*t/freq+faza));
@@ -160,12 +172,21 @@ void APSK::Generate_ASK()
         {
             askmodulacja.push_back((A*sin(2*pi*f1*t/freq+faza))/4);
         }
+        if (askmodulacja[t] >= 50)
+        {
+            ask_demodulation_signal.push_back(1);
+        }
+        else if (askmodulacja[t] < 50)
+        {
+            ask_demodulation_signal.push_back(0);
+        }
     }
 }
 
-void APSK::Generate_FSK()
+
+void APSK::Generate_FSK_and_Demodulate()
 {
-    for (double t = 0; t <= sizeof(binary_signal); t++)
+    for (double t = 0; t <= 8; t++)
     {
         if (binary_signal.at(t) == 1)
         {
@@ -175,12 +196,20 @@ void APSK::Generate_FSK()
         {
             fskmodulacja.push_back(A*sin(2*pi*f2*t/freq+faza));
         }
+        if (fskmodulacja[t] >= 50)
+        {
+            fsk_demodulation_signal.push_back(1);
+        }
+        else if(fskmodulacja[t] < 50)
+        {
+            fsk_demodulation_signal.push_back(0);
+        }
     }
 }
 
-void APSK::Generate_PSK()
+void APSK::Generate_PSK_and_Demodulate()
 {
-    for (double t = 0; t <= sizeof(binary_signal); t++)
+    for (double t = 0; t <= 8; t++)
     {
         if (binary_signal.at(t) == 1)
         {
@@ -190,9 +219,16 @@ void APSK::Generate_PSK()
         {
             pskmodulacja.push_back(A*sin(2*pi*freq*t/freq+faza+pi));
         }
+        if (pskmodulacja[t] >= 50)
+        {
+            psk_demodulation_signal.push_back(1);
+        }
+        else if(pskmodulacja[t] < 50)
+        {
+            psk_demodulation_signal.push_back(0);
+        }
     }
 }
-
 
 int main() {
     
@@ -209,14 +245,17 @@ int main() {
     pm.Generate_PM();
     
     APSK apsk;
-    apsk.Generate_ASK();
-    apsk.Generate_FSK();
-    apsk.Generate_PSK();
-    
+    apsk.Generate_ASK_and_Demodulate();
+    apsk.Generate_FSK_and_Demodulate();
+    apsk.Generate_PSK_and_Demodulate();
 
-    
     return 0;
     
 }
+
+
+
+
+
 
 
