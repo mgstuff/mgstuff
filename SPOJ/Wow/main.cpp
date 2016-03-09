@@ -21,7 +21,7 @@ void Wow()
 		cout << "w";
 	}
 
-
+	cout << "XYZ";
 }
 
 
