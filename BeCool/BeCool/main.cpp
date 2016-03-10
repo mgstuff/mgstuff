@@ -7,10 +7,9 @@
 //
 
 #include <iostream>
+#include "Tic-Tac-Toe.h"
 
 int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
+    tic_tac();
     return 0;
-    int[] Array = {1,1,2,3};
 }
