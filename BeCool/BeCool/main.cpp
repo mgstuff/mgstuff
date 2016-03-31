@@ -1,15 +1,23 @@
-//
-//  main.cpp
-//  BeCool
-//
-//  Created by Michał Grycki on 08.03.2016.
-//  Copyright © 2016 Michał Grycki. All rights reserved.
-//
-
 #include <iostream>
-#include "Tic-Tac-Toe.h"
+#include <string>
+using namespace std;
+class Uno {
+    int val;
+public: Uno(int x) { val = x; }
+    int out() { return val; }
+    void operator++(int var) {
+        val += val;
+    }
+};
+ostream &operator<<(ostream &o, Uno u)
+{
+    return o << u.out();
+}
 
-int main(int argc, const char * argv[]) {
-    tic_tac();
+int main()
+{
+    Uno i(2);
+    i++;
+    cout << i;
     return 0;
 }

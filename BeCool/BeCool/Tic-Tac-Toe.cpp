@@ -16,6 +16,12 @@ using namespace std;
 void tic_tac()
 {
     
+    int f =3;
+    int z = ++f;
+    int g = ++f;
+    cout << g << z << f;
+
+    
     
     
     string Game_Table[3][3];
