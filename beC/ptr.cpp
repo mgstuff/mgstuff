@@ -67,6 +67,20 @@ int main(int argc, char** argv)
     Klasa sc;
     sc.methodd(4,5);
 
+    cout << endl << endl;
+    cout << "TABS" << endl;
+
+    int tab[4] = {2,4,5,10};
+    int *ptr;
+
+    ptr = tab;
+
+    for(int i =0; i<4; i++)
+    {
+            cout << *(ptr + i);//ptr[0] //Wypisze w kolejnosci kazdy elemenet
+            cout << endl;
+    }
+
 
     return 0;
 }
