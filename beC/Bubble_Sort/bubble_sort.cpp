@@ -17,10 +17,6 @@ int main()
 }
 
 
-
-
-
-
 void bubble_sux_ascending()
 {
 
