@@ -2,13 +2,10 @@
 #include <stdlib.h>
 #include <ctime>
 #include <time.h>
-#include <stdio.h>
 #include <algorithm>
 #include <array>
-#include <stdint.h>
 
-const int sizear = 10;
-
+const int sizear = 1000;
 
 //@mgstuff
 
@@ -17,38 +14,29 @@ using namespace std;
 void half_and_half(std::array<int, sizear> tab,int target);
 void buuuble_sort(std::array<int, sizear> tab);
 
-
-
-
 int main()
 {
-    //srand (time(NULL));
+    srand (time(NULL));
     std::array<int, sizear> tab;
 
     for(int i=0; i<tab.size(); i++)
     {
-        tab[i] = rand() % 80+1;
+        tab[i] = rand() % 8340+1;
     }
 
     buuuble_sort(tab);
     half_and_half(tab, 68);
 
-
     return 0;
 }
-
-
 void buuuble_sort(std::array<int, sizear> tab)
 {
-    cout << tab.size() << endl << endl;
 
     cout << "Non Sorted Tab" << endl;
     for(int i=0; i<tab.size(); i++)
     {
         cout << tab[i] << "||";
     }
-
-
     int tmp;
     for(int i=0; i<tab.size(); i++)
     {
@@ -62,13 +50,14 @@ void buuuble_sort(std::array<int, sizear> tab)
             }
         }
     }
+
     cout << endl << endl;
+    cout << "Sorted Tab" << endl;
     for(int i=0; i<tab.size(); ++i)
     {
         cout << tab[i] << "||";
     }
 }
-
 
 void half_and_half(std::array<int, sizear> tab,int target)
 {
@@ -82,9 +71,6 @@ void half_and_half(std::array<int, sizear> tab,int target)
     cout << endl << endl;
     cout << "Number to be found:\t" << target << endl << endl;
 
-
-
-
     if(target < tab[mid_pro])
     {
         for(int j=0; j<tab[mid_pro]; j++)
@@ -96,7 +82,6 @@ void half_and_half(std::array<int, sizear> tab,int target)
             }
         }
     }
-
     else if(target > tab[mid_pro])
     {
         for(int j=tab[mid_pro]; j>=tab[mid_pro]; j++)
@@ -112,9 +97,4 @@ void half_and_half(std::array<int, sizear> tab,int target)
     {
         cout << "Was at the mid:\t" << target << endl << endl;
     }
-
-
-
 }
-
-

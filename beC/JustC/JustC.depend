@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1463571447 source:c:\git_mg\mgstuff\bec\justc\struct.c
+	<stdio.h>
+	<stdlib.h>
+
