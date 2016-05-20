@@ -1,2 +1,4 @@
 #XCODE Build Files
-.xcodeproj
+*.xcodeproj
+*.exe
+*.o
