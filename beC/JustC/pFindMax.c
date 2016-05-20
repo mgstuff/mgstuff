@@ -13,6 +13,7 @@ int *FindMax(int nArray[],int n)
 
 int *nAskForDigit(int *nArray, int nSizeOfArray)
 {
+    int *pMax;
     int nTmp_First = 0;
     int nTmp_Second = 0;
 
@@ -36,11 +37,11 @@ int *nAskForDigit(int *nArray, int nSizeOfArray)
         printf("%d. %d\n",i,nArray[i]);
     }
 
-    for(int i=0; i<=nSizeOfArray; i++)
+    for(int i=0; i<nSizeOfArray; i++)
     {
-        for(int j=0; j<=nSizeOfArray; j++)
+        for(int j=0; j<nSizeOfArray; j++)
         {
-            if(nArray[j] > nArray[j+1])
+            if(nArray[j] < nArray[j+1])
             {
                 nTmp_First = nArray[j];
                 nTmp_Second = nArray[j+1];
@@ -52,30 +53,27 @@ int *nAskForDigit(int *nArray, int nSizeOfArray)
 
     printf("\n\n");
 
+    pMax = *nArray;
 
-    for(int i=0; i<nSizeOfArray; i++)
-    {
-        printf("%d. %d\n",i,nArray[i]);
-    }
-
-
-    return *nArray;
+    return pMax;
 }
 
 int main(void)
 {
+
     time_t t;
     srand((unsigned) time(&t));
-
     int nSize = 0;
     int nSizeOfArray = 0;
     int *nArray; //Here i have got array already
+    int pMax;
 
     printf("Give the size of array:\t");
     scanf("%d", &nSizeOfArray);
 
-    nAskForDigit(*nArray,nSizeOfArray);
+    pMax = nAskForDigit(*nArray,nSizeOfArray);
 
+    printf("Max Value is: %d",pMax);
 
 
     return 0;
