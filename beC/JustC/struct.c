@@ -2,6 +2,7 @@
 #include <stdlib.h>
 
 
+
 typedef struct my_s
 {
     char Nazwa[20];
@@ -10,19 +11,6 @@ typedef struct my_s
 } Element;
 
 
-
-typedef struct Klub
-{
-    int l_zawodnikow;
-    int
-
-} klub;
-
-typedef struct Mecz
-{
-
-
-} mecz;
 
 
 typedef struct paszport
@@ -42,25 +30,16 @@ struct Casto
     int ilosc;
 }   skoda;
 
-int main(void)
+
+struct Wezel
 {
-    struct Casto bmw;
-    bmw.cena = 3.14;
-    bmw.ilosc = 4;
+    int szer;
+    int wys;
+    struct Wezel *next;
+};
 
-    printf("%.2f\n\n",bmw.cena);
-    printf("%d\n\n",bmw.ilosc);
-
-    struct Casto *sam = &bmw; //Teraz w zmiennej strukturalnej *sam mam dane bmw
-    sam->cena = 3444.32;
-    sam->ilosc = 453;
-
-    printf("%.2f\n\n",bmw.cena);
-    printf("%.2f\n\n",sam->cena);
-    printf("%d\n\n",bmw.ilosc);
-
-
-
-
-    return 0;
+void somefunc(unsigned long int fvar)
+{
+    *(float*)fvar = 99;
 }
+

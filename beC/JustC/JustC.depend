@@ -1,5 +1,12 @@
 # depslib dependency file v1.0
-1463571447 source:c:\git_mg\mgstuff\bec\justc\struct.c
+1463745769 source:c:\git_mg\mgstuff\bec\justc\struct.c
 	<stdio.h>
 	<stdlib.h>
+
+1463753889 source:c:\git_mg\mgstuff\bec\justc\pfindmax.c
+	<stdio.h>
+	<conio.h>
+	<ctype.h>
+	<stdlib.h>
+	<time.h>
 
