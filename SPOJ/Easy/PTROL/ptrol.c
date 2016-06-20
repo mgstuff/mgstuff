@@ -62,8 +62,8 @@ fill_arr() {
 	
 	do {
 		scanf("%d%d%c", &how_many_num, &num_to_arr, &tmp);
-		arr_to_be_swapped[i] = num_to_arr;
-		i++;
+		arr_to_be_swapped[i++] = num_to_arr;
+		//i++;
 		if(i == how_many_num) {
 			break;
 		}
