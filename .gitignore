@@ -1,4 +1,6 @@
 #XCODE Build Files
 *.xcodeproj
 *.exe
+*.swp
 *.o
+
