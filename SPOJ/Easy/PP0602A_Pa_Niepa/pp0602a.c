@@ -1,12 +1,56 @@
 /*
  * Michal Grycki
- * PP0602A - Parzysta Nieparzyste
+ * PP00602A - Parzysta Nieparzyste
 */
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
+void dummy_one()
+{
+	char tmp;
+	int n_of_numbers;
+	int num_to_arr;
+
+	scanf("%d", &n_of_numbers);
+
+	int tab[n_of_numbers];
+	int i = 0;
+
+	do {
+		scanf("%d%c", &num_to_arr, &tmp);
+		tab[i] = num_to_arr;
+		i++;
+		if(i == n_of_numbers) {
+			break;
+		}
+	} while( tmp != '\n');
+
+	int size = sizeof(tab)/sizeof(tab[0]);
+
+	for(int i=0; i<size; i++)
+	{
+		if(size % i == 0) {
+			printf("%d", tab[i]);
+		}
+	}
+
+	for(int i=0; i<size; i++)
+	{
+		if(size % i != 0) {
+			printf("%d", tab[i]);
+		}
+	}
+
+
+
+	printf("\n");
+
+}
+
+
+/*
 void
 get_even(int *a_tab, int n_of_numbers) {
 
@@ -48,21 +92,26 @@ get_odd(int *a_tab, int n_of_numbers) {
 	}
 	free(o_tab);
 }
-
+*/
 
 int
 main(void) {
 
-	int n_of_numbers = 0;
-	int num_to_arr;
+//	int n_of_numbers = 0;
+//	int num_to_arr;
 	int n_of_test = 0;
 
-	int i = 0;
-	char tmp;
-	int *a_tab;
+//	int i = 0;
+//	char tmp;
+//	int *a_tab;
 
 	scanf("%d", &n_of_test);
 
+for(int z=0; z<n_of_test; z++) {
+	dummy_one();
+}
+
+/*
 for(int z = 0; z<n_of_test; z++)
 {
 	n_of_numbers = 0;
@@ -87,7 +136,7 @@ do {
 	printf("\n");
 
 }
-
+*/
 
 
 
