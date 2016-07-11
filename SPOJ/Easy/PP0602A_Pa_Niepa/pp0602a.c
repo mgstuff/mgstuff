@@ -127,7 +127,7 @@ do {
 		i++;
 		if(i == n_of_numbers) {
 			break;
-		}
+		}l
 	} while( tmp != '\n');
 
 	get_even(a_tab, n_of_numbers);

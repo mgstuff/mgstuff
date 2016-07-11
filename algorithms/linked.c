@@ -18,9 +18,16 @@ display(island *start)
   }
 }
 
+void
+add_elem(island *start, island *next) {
+  island *i = start;
+
+}
+
 int
 main(void) {
 
+  //Caly typ struktury
   island iceland = {"islandia", "All Day", "Nigdy", NULL};
   island greenland = {"prowyspa", "Nigdy", "All Day", NULL};
   island piekna = {"wyspapro", "Jutro", "Wczoraj", NULL};

@@ -14,7 +14,7 @@ typedef struct scuba {
 
 }diver;
 
-void 
+void
 badge(diver d ) {
 
 	printf("%f\n%d\n%s\n%s\n", d.kit.tank_capacity, d.kit.tank_psi, d.kit.suit_material, d.name);
@@ -27,6 +27,7 @@ main(void) {
 
 	diver randy = {"Rafal", {5.5, 3500, "neopren"}};
 	badge(randy);
+
 
 
 return 0;
