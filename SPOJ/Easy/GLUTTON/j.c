@@ -19,16 +19,18 @@ main(void)
   scanf("%d", &t);
 
 for(int i=0; i<t; i++){
-  m=0;
   n=0;
+  m=0;
   sum = 0;
   sec = 0;
-  scanf("%lf %lf", &m, &n);
-  for(; m>=1; m--) {
-    scanf("%lf\n", &sec);
+  scanf("%lf %lf", &n, &m);
+  for(int j=0; j<n; j++) {
+    scanf("%lf", &sec);
     sum += hour/sec;
+    sec = 0;
   }
-  if(fmod(sum,m) != 0) {
+
+  if(fmod(sum,10) != 0) {
     if(fmod(sum,m)==0) {
       sum = sum/m;
     } else {
@@ -38,9 +40,7 @@ for(int i=0; i<t; i++){
   } else if(fmod(sum,10) == 0) {
     sum = sum/m;
   }
-
-  printf("%lf\n", sum);
-
+  printf("%1.lf\n", sum);
 }
 
 
