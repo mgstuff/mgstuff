@@ -14,24 +14,18 @@ void
   int loop = *n;
   *sum = 0;
 
-  for(;loop>=1; loop--){
-  do{
-      scanf("%d", &sec);
-  } while(sec > 100000);
+  for(;loop>=1; loop--) {
+
+    scanf("%d", &sec);
     *sum += hour/sec;
   }
 
-  if(*sum % 10 !=0) {
-    if(*sum % *m == 0)
-    {
-      *sum = *sum/ *m;
-    } else {
-      *sum = *sum/ *m;
-      *sum += 1;
-    }
-} else if(*sum %10 == 0) {
-    *sum = *sum/ *m;
-}
+  if(*sum % *m ==0) {
+    printf("%d\n", *sum/ *m);
+  } else {
+    printf("%d\n", *sum/ *m+1);
+  }
+
 
 return sum;
 free(sum);
@@ -53,9 +47,7 @@ for(int i=0; i<t; i++) {
 do {
     scanf("%d %d", &n, &m);
 } while(n<1 || n>10000 || m<1 || m>1000000000);
-  res = how_long(&n,&m);
-  printf("%d\n", *res);
-  *res = 0;
+  how_long(&n,&m);
 }
   return 0;
 }
