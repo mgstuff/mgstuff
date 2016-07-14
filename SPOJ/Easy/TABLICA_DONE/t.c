@@ -12,7 +12,7 @@ char tmp;
 int *tab = malloc(sizeof(int));
 
 do {
-  scanf("%d%c", &il, &tmp);
+  scanf("%d%c", &i, &tmp);
   tab[z] = i;
   z++;
   tab = (int*)realloc(tab, (z+1)* sizeof(int)); //realloc take (*ptr to any tab, size IN BYTES!!!!!)
