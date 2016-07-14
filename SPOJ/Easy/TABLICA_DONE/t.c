@@ -22,5 +22,7 @@ for(int i=z-1; i>-1; i--) {
   printf("%d ", tab[i]);
 }
 
+free(tab);
+
   return 0;
 }
