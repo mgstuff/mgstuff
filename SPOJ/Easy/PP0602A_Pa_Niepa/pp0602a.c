@@ -10,7 +10,7 @@
 void dummy_one()
 {
 	char tmp;
-	int n_of_numbers;
+	int n_of_numbelrs;
 	int num_to_arr;
 
 	scanf("%d", &n_of_numbers);
