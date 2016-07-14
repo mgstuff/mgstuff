@@ -15,11 +15,9 @@ do {
   scanf("%d%c", &i, &tmp);
   tab[z] = i;
   z++;
-  tab = (int*)realloc(tab, (z+1)* sizeof(int));
-  printf ("Realloced\n");
+  tab = (int*)realloc(tab, (z+1)* sizeof(int)); //realloc take (*ptr to any tab, size IN BYTES!!!!!)
 } while(tmp != '\n');
 
-printf("here\n");
 for(int i=z-1; i>-1; i--) {
   printf("%d ", tab[i]);
 }
