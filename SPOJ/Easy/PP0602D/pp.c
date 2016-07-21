@@ -36,7 +36,7 @@ imHereTo(amArray *am)
 
   for(int j=0; j<am->arr_size; j++)
   {
-    am->cool_arr[j] = am->cool_arr[j<<am->move_me];
+    am->cool_arr[j] = am->cool_arr[j] >> am->move_me;
   }
   for(int j=0; j<am->arr_size; j++)
   {
