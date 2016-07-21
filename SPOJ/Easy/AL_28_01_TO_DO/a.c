@@ -10,7 +10,8 @@ main(void) {
 
   char *f = malloc(sizeof(char));
   int N;
-  int k;
+  int k = 1;
+  int b=4;
   char *s;
 do {
   scanf("%d\n", &N);
@@ -19,18 +20,13 @@ do {
 f = realloc(f, sizeof(char) * N);
 f = fgets(f,N+1,stdin);
 
-for(int i=0; i<N; i++){
-  for(int j=0; j<N; j++){
-    printf("%s",f);
-  }
-  printf("[%d]OUT\n", i);
+printf("%c\n",f[b]);
+printf("%c%c%c\n",f[b-1], f[b], f[b+1]);
+
+for(int i=0; i<N/2+1;i++)
+{
+  printf("%c",f[b]);
 }
-
-
-printf("%s",f);
-
-
-
 
 free(f);
 
