@@ -5,6 +5,7 @@ typedef struct {
   int arr_size;
   int move_me;
   int *cool_arr;
+  int *put_in_me;
   int *am_second;
   int i_want_to_be_in_array;
   char tmp;
@@ -23,6 +24,7 @@ imHereTo(amArray *am)
 //  am->am_second = malloc(sizeof(int));
   scanf("%d %d", &am->arr_size, &am->move_me);
   am->cool_arr = (int*)calloc(am->arr_size, sizeof(int));
+  am->put_in_me = (int*)malloc(am->arr_size * sizeof(int));
   //am->am_second = realloc(am->am_second, am->arr_size * sizeof(int));
 
   do {
@@ -34,20 +36,39 @@ imHereTo(amArray *am)
 		}
 	} while( am->tmp != '\n');
 
-  for(int j=0; j<am->arr_size; j++)
+  for(int j=0; j<am->arr_size; ++j)
   {
-    am->cool_arr[j] = am->cool_arr[j] >> am->move_me;
+    if(j > am->move_me)
+    {
+      am->put_in_me[j-am->move_me] = am->cool_arr[j];
+    }
+    else if(j < am->move_me)
+    {
+      am->put_in_me[j+am->move_me] = am->cool_arr[j];
+    }
+    else if(j == am->move_me)
+    {
+      am->put_in_me[j-am->move_me] = am->cool_arr[j];
+    }
+
   }
-  for(int j=0; j<am->arr_size; j++)
+
+  for(int j=0; j<am->arr_size; ++j)
   {
-    printf("[%d]%d\n", j, am->cool_arr[j]);
+    printf("[%d]%d\n", j, am->put_in_me[j]);
   }
 
+  free(am->cool_arr);
 
 
 
 
-    free(am->cool_arr);
+
+
+
+
+
+
   //  free(am->am_second);
 
 
