@@ -27,8 +27,8 @@ main(int argc, char **argv)
   struct passwd *p;
   uid_t uid;
 
-  p = getpwuid(getuid());
-  printf("%s\t%d\t%d\n",p->pw_name, uid, p->pw_gid);
+  p = getpwuid(1);
+  printf("%s\t%s\t%d\t%d\t%s",p->pw_name, p->pw_passwd, p->pw_uid, p->pw_gid,p->pw_gecos);
 
   return 0;
 
