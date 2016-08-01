@@ -10,8 +10,8 @@ struct cList
 };
 
 struct cList *head = NULL;
-struct cList *curr = NULL;
-struct cList *node = NULL; //Node bedzie moim ostatnim i na koncu bedzie nullem;
+struct cList *curr = NULL; //curr jest to wezel pomocny
+struct cList *node = NULL; //Node jest aktualnym wezlem
 
 
 struct cList* create_list(int letter)
@@ -29,15 +29,16 @@ struct cList* create_list(int letter)
 
 struct cList* add_item(int letter) //Ta funkcja powinna przyjmowac tez letter
 {
-  node = (struct cList*)malloc(sizeof(struct cList));
-  node->letter = letter;
-  node->next = NULL;
+  node = (struct cList*)malloc(sizeof(struct cList)); //alokacja pamieci dla nowego elementu
+  node->letter = letter; //Przypisanie wartosci dla pola letter ze struktury cList dla zmiennej strukturalnej node
+  node->next = NULL; //Nastepnik jest NULL'em
 
-  curr->next = node;
-  curr = node;
+  curr->next = node; // Nastepnik wezla curr posiada teraz te same wlasciwosci co node
+  curr = node; //curr staje sie node
 
   return node;
 }
+
 
 int delete_item(int letter)
 {
@@ -75,6 +76,23 @@ int delete_item(int letter)
 }
 
 
+void find_elem(int lettere)
+{
+  struct cList *temp;
+  temp = head;
+
+
+do{
+  temp=temp->next;
+  if(temp->letter == lettere)
+  {
+    printf("i found you >>\t%d\n", temp->letter);
+  }
+} while(temp->letter != lettere);
+
+}
+
+
 
 void print_all(struct cList *head) {
   node = head;
@@ -96,16 +114,16 @@ main(void)
 
   //Inicjalizacja listy
   head = curr = create_list(1);
+  //Wstawienie X elementow do listy
   add_item(2);
   add_item(3);
   add_item(4);
-  add_item(5);
-  add_item(6);
-  delete_item(1);
+  //Usuniecie elemenetu o wartosci k2
   delete_item(2);
+  //Wyszukanie elemenetu
+  find_elem(3);
+  //Print from head
   print_all(head);
-
-
 
 
     return 0;
