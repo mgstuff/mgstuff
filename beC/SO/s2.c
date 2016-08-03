@@ -21,14 +21,15 @@ main(int argc, char **argv)
   strcpy(tab, "who -a");
   system(tab);
 */
+  int a= 4;
+  int *ptr = NULL;
 
-  char tab[65000];
+  ptr = &a;
+  *ptr++;
 
-  struct passwd *p;
-  uid_t uid;
+  printf("%d\n", *ptr);
 
-  p = getpwuid(1);
-  printf("%s\t%s\t%d\t%d\t%s",p->pw_name, p->pw_passwd, p->pw_uid, p->pw_gid,p->pw_gecos);
+
 
   return 0;
 
