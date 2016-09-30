@@ -8,7 +8,7 @@ int
 main(void)
 {
   srand(time(NULL));
-  int how_big = 100000;
+  int how_big = 1000000;
   int *tab = malloc(how_big * sizeof(int));
   int cap = how_big;
   int my_turn;
@@ -16,7 +16,7 @@ main(void)
 
   for(int i=0; i<cap; i++)
   {
-    tab[i] = rand() % 100000;
+    tab[i] = rand() % 2033102;
   }
 
 clock_t start = clock(), diff;
