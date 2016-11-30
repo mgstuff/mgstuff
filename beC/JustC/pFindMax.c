@@ -58,6 +58,7 @@ int *nAskForDigit(int *nArray, int nSizeOfArray)
     return pMax;
 }
 
+/*
 int main(void)
 {
 
@@ -77,4 +78,4 @@ int main(void)
 
 
     return 0;
-}
+} */
